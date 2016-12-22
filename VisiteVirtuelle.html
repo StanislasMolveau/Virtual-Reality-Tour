@@ -11,22 +11,25 @@
   <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
   <script type="text/javascript" src="js/main.js"></script>
 
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://cdn.pannellum.org/2.3/pannellum.js"></script>
-
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://cdn.pannellum.org/2.3/pannellum.css">
+  <link rel="stylesheet" href="https://cdn.pannellum.org/2.3/pannellum.css"/>
+  <script type="text/javascript" src="https://cdn.pannellum.org/2.3/pannellum.js"></script>
+  <style>
+    #panorama {
+      width: 600px;
+      height: 400px;
+    }
+  </style>
 </head>
 <body>
-   <div class="fixed" id="fixedDiv" style="visibility:hidden">
-      <div class="contenu">
+  <div class="fixed" id="fixedDiv" style="visibility:hidden">
+    <div class="contenu">
       <div class="ExitContenu">
-      <img src="img/IconExit.PNG" onclick="toggleContent('fixedDiv');"></img>
+        <img src="img/IconExit.PNG" onclick="toggleContent('fixedDiv');"></img>
       </div>
       Bonjour je suis le contenu oui oui
-      </div>
-
     </div>
+
+  </div>
   <header class="header">
 
     <div class="col-12">
@@ -51,27 +54,26 @@
       </div>
     </div>
 
-   
+
 
   </header>
 
 
   <div class="feature4">
     <div class="container-lrg flex">
-      <div class="col-7 centerhorizontal visite_virtuelle">
-        <h3 class="subheading">
-          Brilliant Domain Names.
-        </h3>
-        <p class="paragraph">
-          Launchaco instantly shows you the most relevant domain names. Followed by hundreds of new gtlds. Get your .gold domain name today!
-        </p>
-      </div>
+      <div id="panorama"></div>
+      <script>
+        pannellum.viewer('panorama', {
+          "type": "equirectangular",
+          "panorama": "img/gGxwr.jpg"
+        });
+      </script>
       <div class="col-1">
       </div>
       <div class="col-5 info_complementaires">
 
         <div class="ContenuInfos" align="center">
-        <button onclick="toggleContent('fixedDiv');" class="nav-link bouton_basique" id ="shwoDIv">En savoir plus...</button>
+          <button onclick="toggleContent('fixedDiv');" class="nav-link bouton_basique" id ="shwoDIv">En savoir plus...</button>
 
         </div>
       </div>
