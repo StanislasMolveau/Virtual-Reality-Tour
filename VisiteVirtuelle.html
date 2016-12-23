@@ -63,11 +63,53 @@
     <div class="container-lrg flex">
       <div id="panorama"></div>
       <script>
-        pannellum.viewer('panorama', {
-          "type": "equirectangular",
-          "panorama": "img/gGxwr.jpg"
-        });
-      </script>
+pannellum.viewer('panorama', {   
+    "default": {
+        "firstScene": "CentreCommercial",
+        "author": "Matthew Petroff",
+        "sceneFadeDuration": 1000
+    },
+
+    "scenes": {
+        "CentreCommercial": {
+            "title": "Mason Circle",
+            "hfov": 110,
+            "pitch": -3,
+            "yaw": 117,
+            "type": "equirectangular",
+            "panorama": "/img/1.jpg",
+            "hotSpots": [
+                {
+                    "pitch": -2.1,
+                    "yaw": 132.9,
+                    "type": "scene",
+                    "text": "Spring House or Dairy",
+                    "sceneId": "scene2"
+                }
+            ]
+        },
+
+        "scene2": {
+            "title": "Spring House or Dairy",
+            "hfov": 110,
+            "yaw": 5,
+            "type": "equirectangular",
+            "panorama": "img/2.jpg",
+            "hotSpots": [
+                {
+                    "pitch": -0.6,
+                    "yaw": 37.1,
+                    "type": "scene",
+                    "text": "Mason Circle",
+                    "sceneId": "circle",
+                    "targetYaw": -23,
+                    "targetPitch": 2
+                }
+            ]
+        }
+    }
+});
+</script>
       <div class="col-1">
       </div>
       <div class="col-5 info_complementaires">
