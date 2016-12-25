@@ -90,12 +90,26 @@
 										]
 									}
 								}
+							}).on('scenechange',function(scene_id){
+								$("#navSub").children().hide();
+								console.log("triggered");
+								$("#" + scene_id).show(); 
+								// here scene_id is a string
 							});
 						</script>
 					</div>
-					<div class="5u 12u(mobilep)">
-						<h3>And another subheading</h3>
-						<p>Adipiscing faucibus nunc placerat. Tempus adipiscing turpis non blandit accumsan eget lacinia nunc integer interdum amet aliquam ut orci non col ut ut praesent. Semper amet interdum mi. Phasellus enim laoreet ac ac commodo faucibus faucibus. Curae lorem ipsum adipiscing ac. Vivamus ornare laoreet odio vis praesent.</p>
+					<div class="5u 12u(mobilep)" id="navsub">
+						<div id="circle">
+							<h3>Circle Scene</h3>
+							<p>Ceci est la scene appelé "circle" oui.</p>
+						</div>
+
+						<div id="house" style= "visibility: hidden">
+							<h3>House Scene</h3>
+							<p>Ceci est la scene appelé "house" oui oui.</p>
+						</div>
+
+
 					</div>
 				</div>
 				<span class="image featured"><img src="images/pic01.jpg" alt="" /></span>
