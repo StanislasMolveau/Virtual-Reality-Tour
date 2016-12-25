@@ -91,7 +91,12 @@
 									}
 								}
 							}).on('scenechange',function(scene_id){
-								$("#navSub").children().hide();
+								var scenes = document.getElementById("navsub");
+								var children = scenes.children;
+								for (var i = 0; i < children.length; i++) {
+									var child = children[i];
+									child.style.display = 'none';
+								}
 								console.log("triggered");
 								$("#" + scene_id).show(); 
 								// here scene_id is a string
