@@ -41,7 +41,7 @@
 			<div class="box">
 
 				<div class="row">
-					<div class="7u 12u(mobilep)">
+					<div class="12u 12u(mobilep)">
 						<div id="panorama"></div>
 
 						<script>
@@ -88,6 +88,25 @@
 											"targetPitch": 2
 										}
 										]
+									},
+
+									"cours": {
+										"title": "Salle de cours",
+										"hfov": 110,
+										"yaw": 5,
+										"type": "equirectangular",
+										"panorama": "images/visite/SalleClasseSphere.jpg",
+										"hotSpots": [
+										{
+											"pitch": -0.6,
+											"yaw": 37.1,
+											"type": "scene",
+											"text": "Etablissement",
+											"sceneId": "circle",
+											"targetYaw": -23,
+											"targetPitch": 2
+										}
+										]
 									}
 								}
 							}).on('scenechange',function(scene_id){
@@ -103,15 +122,20 @@
 							});
 						</script>
 					</div>
-					<div class="5u 12u(mobilep)" id="navsub">
+					<div class="7u 12u(mobilep)" id="navsub">
 						<div id="circle">
 							<h3>Circle Scene</h3>
-							<p>Ceci est la scene appelé "circle" oui.</p>
+							<p>Ceci est la scene appelé "circle".</p>
 						</div>
 
 						<div id="house" style="display: none">
 							<h3>House Scene</h3>
-							<p>Ceci est la scene appelé "house" oui oui.</p>
+							<p>Ceci est la scene appelé "house".</p>
+						</div>
+
+						<div id="cours" style="display: none">
+							<h3>Salle de cours</h3>
+							<p>Ceci est la scene appelé "cours".</p>
 						</div>
 
 
