@@ -47,67 +47,351 @@
 						<script>
 							pannellum.viewer('panorama', {   
 								"default": {
-									"firstScene": "circle",
+									"firstScene": "Exterieur_Etablissement",
 									"author": "Stanislas MOLVEAU",
 									"sceneFadeDuration": 1000
 								},
 
 								"scenes": {
-									"circle": {
-										"title": "Accueil",
+									"Exterieur_Etablissement": 
+									{
+										"title": "Exterieur Etablissement",
 										"hfov": 110,
 										"pitch": -3,
 										"yaw": 117,
 										"type": "equirectangular",
-										"panorama": "images/visite/accueil.jpg",
+										"panorama": "images/visite/ExterieurEtablissement.jpg",
 										"hotSpots": [
 										{
 											"pitch": -2.1,
 											"yaw": 132.9,
 											"type": "scene",
-											"text": "Etablissement bel Horizon",
-											"sceneId": "house"
+											"text": "Accueil_Etablissement",
+											"sceneId": "Accueil_Etablissement",
+
+											"targetYaw": -23,
+											"targetPitch": 2
 										}
 										]
 									},
 
-									"house": {
+									"Accueil_Etablissement": 
+									{
+										"title": "Accueil Etablissement",
+										"hfov": 110,
+										"pitch": -3,
+										"yaw": 117,
+										"type": "equirectangular",
+										"panorama": "images/visite/AccueilEtablissement.jpg",
+										"hotSpots": [
+										{
+											"pitch": -2.1,
+											"yaw": 132.9,
+											"type": "scene",
+											"text": "Couloir Central",
+											"sceneId": "Couloir_Central",
+
+											"targetYaw": -23,
+											"targetPitch": 2
+										}
+										]
+									},
+
+									"Couloir_Central": 
+									{
+										"title": "Couloir Central",
+										"hfov": 110,
+										"pitch": -3,
+										"yaw": 117,
+										"type": "equirectangular",
+										"panorama": "images/visite/CouloirCentral.jpg",
+										"hotSpots": [
+										{
+											"pitch": -2.1,
+											"yaw": 132.9,
+											"type": "scene",
+											"text": "Chambre Témoin",
+											"sceneId": "Chambre_temoin1",
+
+											"targetYaw": -23,
+											"targetPitch": 2
+										}
+										{
+											"pitch": 2,
+											"yaw": 132.9,
+											"type": "scene",
+											"text": "Salle d'animations",
+											"sceneId": "Salle_animations",
+											"targetYaw": -23,
+											"targetPitch": 2
+										}
+
+										{
+											"pitch": 4,
+											"yaw": 132.9,
+											"type": "scene",
+											"text": "Salle à manger",
+											"sceneId": "Salle_manger",
+											"targetYaw": -23,
+											"targetPitch": 2
+										}
+
+										{
+											"pitch": 6,
+											"yaw": 132.9,
+											"type": "scene",
+											"text": "Cantou",
+											"sceneId": "Accueil_Cantou",
+											"targetYaw": -23,
+											"targetPitch": 2
+										}
+
+										{
+											"pitch": 8,
+											"yaw": 132.9,
+											"type": "scene",
+											"text": "Salon de coiffure",
+											"sceneId": "Salon_coiffure",
+											"targetYaw": -23,
+											"targetPitch": 2
+										}
+										]
+									},
+
+									"Salon_coiffure": 
+									{
+										"title": "Salon de Coiffure",
+										"hfov": 110,
+										"yaw": 5,
+										"type": "equirectangular",
+										"panorama": "images/visite/SalonCoiffure.jpg",
+										"hotSpots": [
+										{
+											"pitch": -2.1,
+											"yaw": 132.9,
+											"type": "scene",
+											"text": "Couloir Central",
+											"sceneId": "Couloir_Central",
+											"targetYaw": -23,
+											"targetPitch": 2
+										}
+										]
+									},
+
+									"Chambre_temoin1": 
+									{
+										"title": "Chambre témoin",
+										"hfov": 110,
+										"pitch": -3,
+										"yaw": 117,
+										"type": "equirectangular",
+										"panorama": "images/visite/ChambreTemoin1.jpg",
+										"hotSpots": [
+										{
+											"pitch": -2.1,
+											"yaw": 132.9,
+											"type": "scene",
+											"text": "Couloir Central",
+											"sceneId": "Couloir_Central",
+											"targetYaw": -23,
+											"targetPitch": 2
+										}
+										]
+									},
+
+									"Salle_manger": 
+									{
 										"title": "Salle à manger",
 										"hfov": 110,
-										"yaw": 5,
+										"pitch": -3,
+										"yaw": 117,
 										"type": "equirectangular",
-										"panorama": "images/visite/restau.jpg",
+										"panorama": "images/visite/SalleManger.jpg",
 										"hotSpots": [
 										{
-											"pitch": -0.6,
-											"yaw": 37.1,
+											"pitch": -2.1,
+											"yaw": 132.9,
 											"type": "scene",
-											"text": "Etablissement",
-											"sceneId": "cours",
+											"text": "Couloir Central",
+											"sceneId": "Couloir_Central",
 											"targetYaw": -23,
 											"targetPitch": 2
 										}
 										]
 									},
 
-									"cours": {
-										"title": "Salle de cours",
+									// ETAGE ------------------
+
+
+									"Salle_animations": 
+									{
+										"title": "Salle animations",
 										"hfov": 110,
 										"yaw": 5,
 										"type": "equirectangular",
-										"panorama": "images/visite/SalleClasseSphere.jpg",
+										"panorama": "images/visite/SalleAnimations.jpg",
 										"hotSpots": [
 										{
 											"pitch": -0.6,
 											"yaw": 37.1,
 											"type": "scene",
-											"text": "Etablissement",
-											"sceneId": "circle",
+											"text": "Salle Ludique",
+											"sceneId": "Salle_ludique",
+											"targetYaw": -23,
+											"targetPitch": 2
+										}
+
+										{
+											"pitch": -0.6,
+											"yaw": 37.1,
+											"type": "scene",
+											"text": "Salle detente",
+											"sceneId": "Salle_detente",
+											"targetYaw": -23,
+											"targetPitch": 2
+										}
+
+										{
+											"pitch": -2.1,
+											"yaw": 132.9,
+											"type": "scene",
+											"text": "Couloir Central",
+											"sceneId": "Couloir_Central",
+											"targetYaw": -23,
+											"targetPitch": 2
+										}
+
+										]
+									},
+
+									
+									"Salle_detente": 
+									{
+										"title": "Salle détente",
+										"hfov": 110,
+										"yaw": 5,
+										"type": "equirectangular",
+										"panorama": "images/visite/SalleDetente.jpg",
+										"hotSpots": [
+										{
+											"pitch": -0.6,
+											"yaw": 37.1,
+											"type": "scene",
+											"text": "Salle Animations",
+											"sceneId": "Salle_animations",
 											"targetYaw": -23,
 											"targetPitch": 2
 										}
 										]
-									}
+									},
+
+
+									"Salle_ludique": 
+									{
+										"title": "Salle ludique",
+										"hfov": 110,
+										"yaw": 5,
+										"type": "equirectangular",
+										"panorama": "images/visite/SalleLudique.jpg",
+										"hotSpots": [
+										{
+											"pitch": -0.6,
+											"yaw": 37.1,
+											"type": "scene",
+											"text": "Salle Animations",
+											"sceneId": "Salle_animations",
+											"targetYaw": -23,
+											"targetPitch": 2
+										}
+										]
+									},
+
+
+									// CANTOU --------------------
+
+									"Accueil_Cantou": 
+									{
+										"title": "Accueil Cantou",
+										"hfov": 110,
+										"pitch": -3,
+										"yaw": 117,
+										"type": "equirectangular",
+										"panorama": "images/visite/Cantou2.jpg",
+										"hotSpots": [
+										{
+											"pitch": -2.1,
+											"yaw": 132.9,
+											"type": "scene",
+											"text": "Couloir_Central",
+											"sceneId": "Couloir_Central",
+											"targetYaw": -23,
+											"targetPitch": 2
+										}
+
+										{
+											"pitch": 5,
+											"yaw": 132.9,
+											"type": "scene",
+											"text": "Salle principale Cantou",
+											"sceneId": "Cantou_salle",
+											"targetYaw": -23,
+											"targetPitch": 2
+										}
+										]
+									},
+
+									"Cantou_salle": 
+									{
+										"title": "Salle Principale Cantou",
+										"hfov": 110,
+										"pitch": -3,
+										"yaw": 117,
+										"type": "equirectangular",
+										"panorama": "images/visite/Cantou1.jpg",
+										"hotSpots": [
+										{
+											"pitch": -2.1,
+											"yaw": 132.9,
+											"type": "scene",
+											"text": "Accueil Cantou",
+											"sceneId": "Accueil_Cantou",
+											"targetYaw": -23,
+											"targetPitch": 2
+										}
+
+										{
+											"pitch": -2.1,
+											"yaw": 132.9,
+											"type": "scene",
+											"text": "Salle Témoin Cantou",
+											"sceneId": "Chambre_temoin2",
+											"targetYaw": -23,
+											"targetPitch": 2
+										}
+
+										]
+									},
+
+									"Chambre_temoin2": 
+									{
+										"title": "Chambre témoin Cantou",
+										"hfov": 110,
+										"pitch": -3,
+										"yaw": 117,
+										"type": "equirectangular",
+										"panorama": "images/visite/ChambreTemoin2.jpg",
+										"hotSpots": [
+										{
+											"pitch": -2.1,
+											"yaw": 132.9,
+											"type": "scene",
+											"text": "Salle Principale Cantou",
+											"sceneId": "Cantou_salle",
+											"targetYaw": -23,
+											"targetPitch": 2
+										}
+										]
+									}	
 								}
 							}).on('scenechange',function(scene_id){
 								var scenes = document.getElementById("navsub");
