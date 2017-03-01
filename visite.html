@@ -35,6 +35,7 @@
 		<!-- Main -->
 		<section id="main" class="container">
 			<header>
+			<span class="icon major fa-camera accent5"></span><br/>
 				<h2>Visite virtuelle</h2>
 				
 			</header>
@@ -189,7 +190,7 @@
 										"hotSpots": [
 										{
 											"pitch": -2.1,
-											"yaw": -120,
+											"yaw": -200, // 120 last
 											"type": "scene",
 											"text": "Couloir Central",
 											"sceneId": "Couloir_Central",
@@ -204,7 +205,7 @@
 										"title": "Salle à manger",
 										"hfov": 110,
 										"pitch": -3,
-										"yaw": 117,
+										"yaw": 125, // 117 last
 										"type": "equirectangular",
 										"panorama": "images/visite/SalleManger.jpg",
 										"hotSpots": [
@@ -233,7 +234,7 @@
 										"hotSpots": [
 										{
 											"pitch": -0.6,
-											"yaw": 58,
+											"yaw": 265, // last 58
 											"type": "scene",
 											"text": "Salle Ludique",
 											"sceneId": "Salle_ludique",
@@ -243,7 +244,7 @@
 
 										{
 											"pitch": -0.8,
-											"yaw": 65,
+											"yaw": 250, // last 65
 											"type": "scene",
 											"text": "Salle detente",
 											"sceneId": "Salle_detente",
@@ -253,7 +254,7 @@
 
 										{
 											"pitch": -2.1,
-											"yaw": 195,
+											"yaw": -75, //last 195
 											"type": "scene",
 											"text": "Couloir Central",
 											"sceneId": "Couloir_Central",
@@ -351,7 +352,7 @@
 										"hotSpots": [
 										{
 											"pitch": -2.1,
-											"yaw": -30,
+											"yaw": -200, // -30 last
 											"type": "scene",
 											"text": "Accueil Cantou",
 											"sceneId": "Accueil_Cantou",
@@ -383,7 +384,7 @@
 										"hotSpots": [
 										{
 											"pitch": -2.1,
-											"yaw": -20,
+											"yaw": 70, // last -20
 											"type": "scene",
 											"text": "Salle Principale Cantou",
 											"sceneId": "Cantou_salle",
@@ -406,21 +407,74 @@
 							});
 						</script>
 					</div>
-					<div class="7u 12u(mobilep)" id="navsub">
-						<div id="circle">
-							<h3>Circle Scene</h3>
-							<p>Ceci est la scene appelé "circle".</p>
+					<div class="12u 12u(mobilep)" id="navsub">
+						<div id="Exterieur_Etablissement">
+							<h3>Exterieur de l'établissement</h3>
+							<p>Voici l'entrée de la résidence Bel Horizon.</p>
 						</div>
 
-						<div id="house" style="display: none">
-							<h3>House Scene</h3>
-							<p>Ceci est la scene appelé "house".</p>
+						<div id="Accueil_Etablissement" style="display: none">
+							<h3>Accueil de l'établissement</h3>
+							<p>Des employés pourront ici répondre à vos questions.</p>
 						</div>
 
-						<div id="cours" style="display: none">
-							<h3>Salle de cours</h3>
-							<p>Ceci est la scene appelé "cours".</p>
+						<div id="Couloir_Central" style="display: none">
+							<h3>Le couloir central</h3>
+							<p>Le couloir central de l'établissement est un lieu de passage mais aussi un lieu de vie.</p>
 						</div>
+
+						<div id="Salon_coiffure" style="display: none">
+							<h3>Le salon de coiffure</h3>
+							<p>L'établissement propose toutes sortes de services à la personne.
+							Ici nottament, est proposé un salon de coiffure.</p>
+						</div>
+
+						<div id="Chambre_temoin1" style="display: none">
+							<h3>Un exemple de chambre "témoin"</h3>
+							<p>Un exemple type de chambre simple proposé à l'EHPAD du Puy-en-Velay.
+							La chambre est d'environ 18m², et est composé d'un lit, d'une salle de bain contenant des toilettes et une douche.</p>
+						</div>
+
+						<div id="Salle_manger" style="display: none">
+							<h3>La salle à manger</h3>
+							<p>La salle à manger est un grand espace où l'ont peu manger ensemble, des activités sont parfois proposés.</p>
+						</div>
+
+						<div id="Salle_animations" style="display: none">
+							<h3>La salle d'animations</h3>
+							<p>La salle principale où la plupart des activités prennent place.</p>
+						</div>
+
+						<div id="Salle_detente" style="display: none">
+							<h3>La salle détente</h3>
+							<p>La salle détente est une petite pièce comprenant des sièges massants. C'est un espace où l'on peu lire ou bien écouter de la musique.</p>
+						</div>
+
+						<div id="Salle_ludique" style="display: none">
+							<h3>La salle ludique</h3>
+							<p>La salle ludique est une salle de vie bien éclairé qui peut servir de pièce pour des animations.</p>
+						</div>
+
+						<div id="Accueil_Cantou" style="display: none">
+							<h3>L'accueil du Cantou</h3>
+							<p>Le Cantou est un espace séparé de l'EHPAD. Le Cantou permet d’améliorer la prise en charge des personnes âgées atteintes de la maladie d’Alzheimer, en offrant un cadre sécurisé et chaleureux.</p>
+						</div>
+
+						<div id="Cantou_salle" style="display: none">
+							<h3>La salle médiane du Cantou</h3>
+							<p></p>
+						</div>
+
+						<div id="Chambre_temoin2" style="display: none">
+							<h3>Une chambre témoin du Cantou</h3>
+							<p>Un exemple type de chambre simple proposé au Cantou de l'EHPAD du Puy-en-Velay.
+							La chambre est d'environ 18m², et est composé d'un lit, d'une salle de bain contenant des toilettes et une douche.</p>
+						</div>
+
+
+
+
+
 
 
 					</div>
