@@ -35,201 +35,232 @@
 		<!-- Main -->
 		<section id="main" class="container">
 			<header>
-			<span class="icon major fa-camera accent5"></span><br/>
+				<span class="icon major fa-camera accent5"></span><br/>
 				<h2>Visite virtuelle</h2>
 				
 			</header>
 			<div class="box">
+				<script>
+			// Run everything inside window load event handler, to make sure
+// DOM is fully loaded and styled before trying to manipulate it.
+window.addEventListener("load", function() {
+	var paragraph = document.getElementById("paraWebGL"),
+	button = document.getElementById("btnWebGL");
+  // Adding click event handler to button.
+  button.addEventListener("click", detectWebGLContext, false);
+  function detectWebGLContext () {
+    // Create canvas element. The canvas is not added to the
+    // document itself, so it is never displayed in the
+    // browser window.
+    var canvas = document.createElement("canvas");
+    // Get WebGLRenderingContext from canvas element.
+    var gl = canvas.getContext("webgl")
+    || canvas.getContext("experimental-webgl");
+    // Report the result.
+    if (gl && gl instanceof WebGLRenderingContext) {
+    	paragraph.innerHTML =
+    	"Votre navigateur détecte WebGL. La visite virtuelle est utilisable.";
+    } else {
+    	paragraph.innerHTML = "Votre navigateur ne contient pas WebGL. La visite virtuelle ne peut pas être lancer."
+    	+ "Your browser or device may not support WebGL.";
+    }
+}
+}, false);
 
-				<div class="row">
-					<div class="7u 7u(mobilep)">
-						<div id="panorama"></div>
+</script>
+<div class ="WebGlContext 12u 12u(mobilep) ">
+	<p id="paraWebGL">Appuyer sur ce bouton afin de savoir si votre navigateur détecte WebGL</p>
+	<button id="btnWebGL"></button>
+</div>
+<div class="row">
+	<div class="7u 7u(mobilep)">
+		<div id="panorama"></div>
 
-						<script>
-							pannellum.viewer('panorama', {   
-								"default": {
-									"firstScene": "Exterieur_Etablissement",
-									"author": "Stanislas MOLVEAU",
-									"sceneFadeDuration": 1000
-								},
+		<script>
+			pannellum.viewer('panorama', {   
+				"default": {
+					"firstScene": "Exterieur_Etablissement",
+					"author": "Stanislas MOLVEAU",
+					"sceneFadeDuration": 1000
+				},
 
-								"scenes": {
-									"Exterieur_Etablissement": 
-									{
-										"title": "Exterieur Etablissement",
-										"hfov": 110,
-										"pitch": -3,
-										"yaw": 117,
-										"type": "equirectangular",
-										"panorama": "images/visite/Exterieur.jpg",
-										"hotSpots": [
-										{
-											"pitch": -2.1,
-											"yaw": 145,
-											"type": "scene",
-											"text": "Accueil_Etablissement",
-											"sceneId": "Accueil_Etablissement",
+				"scenes": {
+					"Exterieur_Etablissement": 
+					{
+						"title": "Exterieur Etablissement",
+						"hfov": 110,
+						"pitch": -3,
+						"yaw": 117,
+						"type": "equirectangular",
+						"panorama": "images/visite/Exterieur.jpg",
+						"hotSpots": [
+						{
+							"pitch": -2.1,
+							"yaw": 145,
+							"type": "scene",
+							"text": "Accueil_Etablissement",
+							"sceneId": "Accueil_Etablissement",
 
-											"targetYaw": -23,
-											"targetPitch": 2
-										}
-										]
-									},
+							"targetYaw": -23,
+							"targetPitch": 2
+						}
+						]
+					},
 
-									"Accueil_Etablissement": 
-									{
-										"title": "Accueil Etablissement",
-										"hfov": 110,
-										"pitch": -3,
-										"yaw": 117,
-										"type": "equirectangular",
-										"panorama": "images/visite/AccueilEtablissement.jpg",
-										"hotSpots": [
-										{
-											"pitch": -2.1,
-											"yaw": 165,
-											"type": "scene",
-											"text": "Couloir Central",
-											"sceneId": "Couloir_Central",
+					"Accueil_Etablissement": 
+					{
+						"title": "Accueil Etablissement",
+						"hfov": 110,
+						"pitch": -3,
+						"yaw": 117,
+						"type": "equirectangular",
+						"panorama": "images/visite/AccueilEtablissement.jpg",
+						"hotSpots": [
+						{
+							"pitch": -2.1,
+							"yaw": 165,
+							"type": "scene",
+							"text": "Couloir Central",
+							"sceneId": "Couloir_Central",
 
-											"targetYaw": -23,
-											"targetPitch": 2
-										}
-										]
-									},
+							"targetYaw": -23,
+							"targetPitch": 2
+						}
+						]
+					},
 
-									"Couloir_Central": 
-									{
-										"title": "Couloir Central",
-										"hfov": 110,
-										"pitch": -3,
-										"yaw": 117,
-										"type": "equirectangular",
-										"panorama": "images/visite/CouloirCentral.jpg",
-										"hotSpots": [
-										{
-											"pitch": -2.1,
-											"yaw": -45,
-											"type": "scene",
-											"text": "Chambre Témoin",
-											"sceneId": "Chambre_temoin1",
+					"Couloir_Central": 
+					{
+						"title": "Couloir Central",
+						"hfov": 110,
+						"pitch": -3,
+						"yaw": 117,
+						"type": "equirectangular",
+						"panorama": "images/visite/CouloirCentral.jpg",
+						"hotSpots": [
+						{
+							"pitch": -2.1,
+							"yaw": -45,
+							"type": "scene",
+							"text": "Chambre Témoin",
+							"sceneId": "Chambre_temoin1",
 
-											"targetYaw": -23,
-											"targetPitch": 2
-										},
-										{
-											"pitch": 15,
-											"yaw": 20,
-											"type": "scene",
-											"text": "Salle d'animations",
-											"sceneId": "Salle_animations",
-											"targetYaw": -23,
-											"targetPitch": 2
-										},
+							"targetYaw": -23,
+							"targetPitch": 2
+						},
+						{
+							"pitch": 15,
+							"yaw": 20,
+							"type": "scene",
+							"text": "Salle d'animations",
+							"sceneId": "Salle_animations",
+							"targetYaw": -23,
+							"targetPitch": 2
+						},
 
-										{
-											"pitch": -2.1,
-											"yaw":5,
-											"type": "scene",
-											"text": "Salle à manger",
-											"sceneId": "Salle_manger",
-											"targetYaw": -23,
-											"targetPitch": 2
-										},
+						{
+							"pitch": -2.1,
+							"yaw":5,
+							"type": "scene",
+							"text": "Salle à manger",
+							"sceneId": "Salle_manger",
+							"targetYaw": -23,
+							"targetPitch": 2
+						},
 
-										{
-											"pitch": -2.1,
-											"yaw": 15,
-											"type": "scene",
-											"text": "Cantou",
-											"sceneId": "Accueil_Cantou",
-											"targetYaw": -23,
-											"targetPitch": 2
-										},
+						{
+							"pitch": -2.1,
+							"yaw": 15,
+							"type": "scene",
+							"text": "Cantou",
+							"sceneId": "Accueil_Cantou",
+							"targetYaw": -23,
+							"targetPitch": 2
+						},
 
-										{
-											"pitch": -2.1,
-											"yaw": -170,
-											"type": "scene",
-											"text": "Accueil Etablissement",
-											"sceneId": "Accueil_Etablissement",
-											"targetYaw": -23,
-											"targetPitch": 2
-										},
+						{
+							"pitch": -2.1,
+							"yaw": -170,
+							"type": "scene",
+							"text": "Accueil Etablissement",
+							"sceneId": "Accueil_Etablissement",
+							"targetYaw": -23,
+							"targetPitch": 2
+						},
 
-										{
-											"pitch": -2.1,
-											"yaw": 10,
-											"type": "scene",
-											"text": "Salon de coiffure",
-											"sceneId": "Salon_coiffure",
-											"targetYaw": -23,
-											"targetPitch": 2
-										}
-										]
-									},
+						{
+							"pitch": -2.1,
+							"yaw": 10,
+							"type": "scene",
+							"text": "Salon de coiffure",
+							"sceneId": "Salon_coiffure",
+							"targetYaw": -23,
+							"targetPitch": 2
+						}
+						]
+					},
 
-									"Salon_coiffure": 
-									{
-										"title": "Salon de Coiffure",
-										"hfov": 110,
-										"yaw": 5,
-										"type": "equirectangular",
-										"panorama": "images/visite/SalonCoiffure.jpg",
-										"hotSpots": [
-										{
-											"pitch": -2.1,
-											"yaw": 142,
-											"type": "scene",
-											"text": "Couloir Central",
-											"sceneId": "Couloir_Central",
-											"targetYaw": -23,
-											"targetPitch": 2
-										}
-										]
-									},
+					"Salon_coiffure": 
+					{
+						"title": "Salon de Coiffure",
+						"hfov": 110,
+						"yaw": 5,
+						"type": "equirectangular",
+						"panorama": "images/visite/SalonCoiffure.jpg",
+						"hotSpots": [
+						{
+							"pitch": -2.1,
+							"yaw": 142,
+							"type": "scene",
+							"text": "Couloir Central",
+							"sceneId": "Couloir_Central",
+							"targetYaw": -23,
+							"targetPitch": 2
+						}
+						]
+					},
 
-									"Chambre_temoin1": 
-									{
-										"title": "Chambre témoin",
-										"hfov": 110,
-										"pitch": -3,
-										"yaw": 0,
-										"type": "equirectangular",
-										"panorama": "images/visite/ChambreTemoin1.jpg",
-										"hotSpots": [
-										{
-											"pitch": -2.1,
-											"yaw": -35,
-											"type": "scene",
-											"text": "Couloir Central",
-											"sceneId": "Couloir_Central",
-											"targetYaw": -23,
-											"targetPitch": 2
-										}
-										]
-									},
+					"Chambre_temoin1": 
+					{
+						"title": "Chambre témoin",
+						"hfov": 110,
+						"pitch": -3,
+						"yaw": 0,
+						"type": "equirectangular",
+						"panorama": "images/visite/ChambreTemoin1.jpg",
+						"hotSpots": [
+						{
+							"pitch": -2.1,
+							"yaw": -35,
+							"type": "scene",
+							"text": "Couloir Central",
+							"sceneId": "Couloir_Central",
+							"targetYaw": -23,
+							"targetPitch": 2
+						}
+						]
+					},
 
-									"Salle_manger": 
-									{
-										"title": "Salle à manger",
-										"hfov": 110,
-										"pitch": -3,
-										"yaw": 112, 
-										"type": "equirectangular",
-										"panorama": "images/visite/SalleManger.jpg",
-										"hotSpots": [
-										{
-											"pitch": -2.1,
-											"yaw": 320,
-											"type": "scene",
-											"text": "Couloir Central",
-											"sceneId": "Couloir_Central",
-											"targetYaw": -23,
-											"targetPitch": 2
-										}
-										]
-									},
+					"Salle_manger": 
+					{
+						"title": "Salle à manger",
+						"hfov": 110,
+						"pitch": -3,
+						"yaw": 112, 
+						"type": "equirectangular",
+						"panorama": "images/visite/SalleManger.jpg",
+						"hotSpots": [
+						{
+							"pitch": -2.1,
+							"yaw": 320,
+							"type": "scene",
+							"text": "Couloir Central",
+							"sceneId": "Couloir_Central",
+							"targetYaw": -23,
+							"targetPitch": 2
+						}
+						]
+					},
 
 									// ETAGE ------------------
 
@@ -433,84 +464,94 @@
 							<h3>Le couloir central</h3>
 							<p>Le couloir central de l'établissement est un lieu de passage mais aussi un lieu de vie.</p>
 							<video controls autoplay class="videoNav">
-  								<source src="images/videos/VideoCouloirCentral.mp4" type="video/mp4">
-  								
-  								Your browser does not support HTML5 video.
-							</video>
-						</div>
+								<source src="images/videos/VideoCouloirCentral.mp4" type="video/mp4">
 
-						<div id="Salon_coiffure" style="display: none">
-							<h3>Le salon de coiffure</h3>
-							<p>L'établissement propose toutes sortes de services à la personne.
-							Ici nottament, est proposé un salon de coiffure.</p>
-							<video controls autoplay class="videoNav">
-  								<source src="images/videos/VideoSalonCoiffure.m4v" type="video/m4v">
-  								
-  								Your browser does not support HTML5 video.
-							</video>
-						</div>
+									Your browser does not support HTML5 video.
+								</video>
+							</div>
 
-						<div id="Chambre_temoin1" style="display: none">
-							<h3>Un exemple de chambre "témoin"</h3>
-							<p>Un exemple type de chambre simple proposé à l'EHPAD du Puy-en-Velay.
-							La chambre est d'environ 18m², et est composé d'un lit, d'une salle de bain contenant des toilettes et une douche.</p>
-						</div>
+							<div id="Salon_coiffure" style="display: none">
+								<h3>Le salon de coiffure</h3>
+								<p>L'établissement propose toutes sortes de services à la personne.
+									Ici nottament, est proposé un salon de coiffure.</p>
+									<video controls autoplay class="videoNav">
+										<source src="images/videos/VideoSalonCoiffure.m4v" type="video/m4v">
 
-						<div id="Salle_manger" style="display: none">
-							<h3>La salle à manger</h3>
-							<p>La salle à manger est un grand espace où l'ont peu manger ensemble, des activités sont parfois proposés.</p>
-							<video controls autoplay class="videoNav">
-  								<source src="images/videos/VideoSalleManger.mp4" type="video/mp4">
-  								
-  								Your browser does not support HTML5 video.
-							</video>
-						</div>
+											Your browser does not support HTML5 video.
+										</video>
+									</div>
 
-						<div id="Salle_animations" style="display: none">
-							<h3>La salle d'animations</h3>
-							<p>La salle principale où la plupart des activités prennent place.</p>
-							<video controls autoplay class="videoNav">
-  								<source src="images/videos/VideoSalleAnimations.m4v" type="video/m4v">
-  								
-  								Your browser does not support HTML5 video.
-							</video>
-						</div>
+									<div id="Chambre_temoin1" style="display: none">
+										<h3>Un exemple de chambre "témoin"</h3>
+										<p>Un exemple type de chambre simple proposé à l'EHPAD du Puy-en-Velay.
+											La chambre est d'environ 18m², et est composé d'un lit, d'une salle de bain contenant des toilettes et une douche.</p>
+										</div>
 
-						<div id="Salle_detente" style="display: none">
-							<h3>La salle détente</h3>
-							<p>La salle détente est une petite pièce comprenant des sièges massants. C'est un espace où l'on peu lire ou bien écouter de la musique.</p>
-							<video controls autoplay class="videoNav">
-  								<source src="images/videos/VideoSalleDetente.mp4" type="video/mp4">
-  								
-  								Your browser does not support HTML5 video.
-							</video>
-						</div>
+										<div id="Salle_manger" style="display: none">
+											<h3>La salle à manger</h3>
+											<p>La salle à manger est un grand espace où l'ont peu manger ensemble, des activités sont parfois proposés.</p>
+											<video controls autoplay class="videoNav">
+												<source src="images/videos/VideoSalleManger.m4v" type="video/mp4">
 
-						<div id="Salle_ludique" style="display: none">
-							<h3>La salle ludique</h3>
-							<p>La salle ludique est une salle de vie bien éclairé qui peut servir de pièce pour des animations.</p>
-							<video controls autoplay class="videoNav">
-  								<source src="images/videos/VideoSalleDetente.mp4" type="video/mp4">
-  								
-  								Your browser does not support HTML5 video.
-							</video>
-						</div>
+													Your browser does not support HTML5 video.
+												</video>
+											</div>
 
-						<div id="Accueil_Cantou" style="display: none">
-							<h3>L'accueil du Cantou</h3>
-							<p>Le Cantou est un espace séparé de l'EHPAD. Le Cantou permet d’améliorer la prise en charge des personnes âgées atteintes de la maladie d’Alzheimer, en offrant un cadre sécurisé et chaleureux.</p>
-						</div>
+											<div id="Salle_animations" style="display: none">
+												<h3>La salle d'animations</h3>
+												<p>La salle principale où la plupart des activités prennent place.</p>
+												<video controls autoplay class="videoNav">
+													<source src="images/videos/VideoSalleAnimations.m4v" type="video/m4v">
 
-						<div id="Cantou_salle" style="display: none">
-							<h3>La salle médiane du Cantou</h3>
-							<p></p>
-						</div>
+														Your browser does not support HTML5 video.
+													</video>
+												</div>
 
-						<div id="Chambre_temoin2" style="display: none">
-							<h3>Une chambre témoin du Cantou</h3>
-							<p>Un exemple type de chambre simple proposé au Cantou de l'EHPAD du Puy-en-Velay.
-							La chambre est d'environ 18m², et est composé d'un lit, d'une salle de bain contenant des toilettes et une douche.</p>
-						</div>
+												<div id="Salle_detente" style="display: none">
+													<h3>La salle détente</h3>
+													<p>La salle détente est une petite pièce comprenant des sièges massants. C'est un espace où l'on peu lire ou bien écouter de la musique.</p>
+													<video controls autoplay class="videoNav">
+														<source src="images/videos/VideoSalleDetente.mp4" type="video/mp4">
+
+															Your browser does not support HTML5 video.
+														</video>
+													</div>
+
+													<div id="Salle_ludique" style="display: none">
+														<h3>La salle ludique</h3>
+														<p>La salle ludique est une salle de vie bien éclairé qui peut servir de pièce pour des animations.</p>
+														<video controls autoplay class="videoNav">
+															<source src="images/videos/VideoSalleDetente.mp4" type="video/mp4">
+
+																Your browser does not support HTML5 video.
+															</video>
+														</div>
+
+														<div id="Accueil_Cantou" style="display: none">
+															<h3>L'accueil du Cantou</h3>
+															<p>Le Cantou est un espace séparé de l'EHPAD. Le Cantou permet d’améliorer la prise en charge des personnes âgées atteintes de la maladie d’Alzheimer, en offrant un cadre sécurisé et chaleureux.</p>
+															<video controls autoplay class="videoNav">
+															<source src="images/videos/VideoCantou.mp4" type="video/mp4">
+
+																Your browser does not support HTML5 video.
+															</video>
+														</div>
+
+														<div id="Cantou_salle" style="display: none">
+															<h3>La salle médiane du Cantou</h3>
+															<p></p>
+															<video controls autoplay class="videoNav">
+															<source src="images/videos/VideoCantou.mp4" type="video/mp4">
+
+																Your browser does not support HTML5 video.
+															</video>
+														</div>
+
+														<div id="Chambre_temoin2" style="display: none">
+															<h3>Une chambre témoin du Cantou</h3>
+															<p>Un exemple type de chambre simple proposé au Cantou de l'EHPAD du Puy-en-Velay.
+																La chambre est d'environ 18m², et est composé d'un lit, d'une salle de bain contenant des toilettes et une douche.</p>
+															</div>
 
 
 
@@ -518,30 +559,30 @@
 
 
 
-					</div>
-				</div>
-				
-			</div>
-		</section>
+														</div>
+													</div>
 
-		<!-- Footer -->
-		<footer id="footer">
+												</div>
+											</section>
 
-				<ul class="copyright">
-					<li>&copy; EHPAD Bel Horizon. Tous droits réservés.</li>
-				</ul>
-			</footer>
+											<!-- Footer -->
+											<footer id="footer">
 
-	</div>
+												<ul class="copyright">
+													<li>&copy; EHPAD Bel Horizon. Tous droits réservés.</li>
+												</ul>
+											</footer>
 
-	<!-- Scripts -->
-	<script src="assets/js/jquery.min.js"></script>
-	<script src="assets/js/jquery.dropotron.min.js"></script>
-	<script src="assets/js/jquery.scrollgress.min.js"></script>
-	<script src="assets/js/skel.min.js"></script>
-	<script src="assets/js/util.js"></script>
-	<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-	<script src="assets/js/main.js"></script>
+										</div>
 
-</body>
-</html>
+										<!-- Scripts -->
+										<script src="assets/js/jquery.min.js"></script>
+										<script src="assets/js/jquery.dropotron.min.js"></script>
+										<script src="assets/js/jquery.scrollgress.min.js"></script>
+										<script src="assets/js/skel.min.js"></script>
+										<script src="assets/js/util.js"></script>
+										<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+										<script src="assets/js/main.js"></script>
+
+									</body>
+									</html>
